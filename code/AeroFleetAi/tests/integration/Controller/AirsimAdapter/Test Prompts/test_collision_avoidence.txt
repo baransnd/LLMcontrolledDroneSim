@@ -1,0 +1,13 @@
+
+----------------Drone1----------------
+self.airsim_adapter.fly_to_xyz([0, 0, 35], drone_name="Drone1",  speed=5)
+current_gps = self.airsim_adapter.get_drone_geopoint("Drone1")
+target_gps = self.airsim_adapter.calculate_new_geo_point(current_gps, north_meters=-50, east_meters=40)
+
+self.airsim_adapter.collision_avoidance_calculation(target_gps, drone_name="Drone1")
+----------------------------------------
+
+
+
+
+

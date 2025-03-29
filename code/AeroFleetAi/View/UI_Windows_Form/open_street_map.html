@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>49.012921, 8.404318</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 100vh; /* Viewport height */
+            width: 100%;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Koordinaten für Karlsruhe, Baden-Württemberg
+        var karlsruheLat = 49.012921;
+        var karlsruheLng = 8.404318;
+
+        // Initialisiere die Karte zentriert auf Karlsruhe
+        var map = L.map('map').setView([karlsruheLat, karlsruheLng], 13);
+
+        // Füge OpenStreetMap-Tiles hinzu
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+        }).addTo(map);
+
+        // Füge ein Klick-Ereignis hinzu, um die Koordinaten zu erhalten
+        map.on('click', function (e) {
+            var lat = e.latlng.lat;
+            var lng = e.latlng.lng;
+            console.log("Latitude: " + lat + ", Longitude: " + lng);
+
+            // Zeige ein Popup mit den Koordinaten
+            L.popup()
+                .setLatLng(e.latlng)
+                .setContent("Latitude: " + lat + ", Longitude: " + lng)
+                .openOn(map);
+
+            // Ändere den Titel des Dokuments, um die Koordinaten anzuzeigen
+            document.title = lat + "," + lng;
+        });
+    </script>
+</body>
+</html>

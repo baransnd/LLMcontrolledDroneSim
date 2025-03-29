@@ -1,0 +1,25 @@
+----------------Drone1----------------
+self.airsim_adapter.reset_survey_counter()
+self.airsim_adapter.all_drones_get_in_line_formation()
+
+----------------------------------------
+
+
+### only codes in upper block will be executed.
+
+self.airsim_adapter.all_drones_get_in_line_formation()
+ self.airsim_adapter.land()
+self.airsim_adapter.reset_survey_counter()
+self.airsim_adapter.set_position([0, -20, 20], drone_name="Drone2")
+
+
+self.airsim_adapter.all_drones_get_in_search_position()
+
+self.airsim_adapter.set_position([0, 20, 20], drone_name="Drone3")
+
+
+
+
+self.airsim_adapter.fly_to_xyz([0, 0, 20], drone_name="Drone1",  speed=20)
+
+self.airsim_adapter.fly_to_xyz([0, 0, 20])

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1306</width>
+    <height>776</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>AeroFleetAI</string>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonStyle::ToolButtonTextOnly</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="menuLayout">
+      <item>
+       <widget class="QMenuBar" name="menubar">
+        <widget class="QMenu" name="menuObjectOptions">
+         <property name="title">
+          <string>Object Options</string>
+         </property>
+         <addaction name="actionPlace_new_Object"/>
+         <addaction name="actionDelete_Object"/>
+        </widget>
+        <widget class="QMenu" name="menuDroneOptions">
+         <property name="title">
+          <string>Drone Options</string>
+         </property>
+         <widget class="QMenu" name="menuDelete_Drone">
+          <property name="title">
+           <string>Delete Drone</string>
+          </property>
+         </widget>
+         <addaction name="actionAdd_new_Drone"/>
+         <addaction name="menuDelete_Drone"/>
+        </widget>
+        <widget class="QMenu" name="menuChangeView">
+         <property name="title">
+          <string>Change View</string>
+         </property>
+         <addaction name="actionFree_Camera"/>
+        </widget>
+        <addaction name="menuObjectOptions"/>
+        <addaction name="menuDroneOptions"/>
+        <addaction name="menuChangeView"/>
+       </widget>
+      </item>
+      <item>
+       <widget class="QToolBar" name="toolBar">
+        <property name="windowTitle">
+         <string>toolBar</string>
+        </property>
+        <addaction name="actionManual_Control"/>
+        <addaction name="actionChange_Map"/>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QSplitter" name="splitter">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Orientation::Horizontal</enum>
+      </property>
+      <property name="opaqueResize">
+       <bool>false</bool>
+      </property>
+      <property name="childrenCollapsible">
+       <bool>false</bool>
+      </property>
+      <widget class="QWidget" name="widget_left">
+       <layout class="QVBoxLayout" name="verticalLayout_left">
+        <item>
+         <widget class="QLabel" name="label_image">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>1000</width>
+            <height>600</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string>background-color: #d3d3d3;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="widget_right">
+       <layout class="QVBoxLayout" name="verticalLayout_right">
+        <item>
+         <widget class="QLabel" name="chatLabel">
+          <property name="styleSheet">
+           <string>color: yellow; font-weight: bold;</string>
+          </property>
+          <property name="text">
+           <string>ChatGpt</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTextBrowser" name="textBrowser">
+          <property name="minimumSize">
+           <size>
+            <width>250</width>
+            <height>450</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_user">
+          <property name="text">
+           <string>User &gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QLineEdit" name="lineEdit_input">
+            <property name="minimumSize">
+             <size>
+              <width>200</width>
+              <height>40</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_2">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset theme="QIcon::ThemeIcon::AudioInputMicrophone"/>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>35</width>
+              <height>35</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionPlace_new_Object">
+   <property name="text">
+    <string>Place new Object</string>
+   </property>
+  </action>
+  <action name="actionDelete_Object">
+   <property name="text">
+    <string>Delete Object</string>
+   </property>
+  </action>
+  <action name="actionAdd_new_Drone">
+   <property name="text">
+    <string>Add new Drone</string>
+   </property>
+  </action>
+  <action name="actionFree_Camera">
+   <property name="text">
+    <string>Free Camera</string>
+   </property>
+  </action>
+  <action name="actionManual_Control">
+   <property name="text">
+    <string>Manual Control</string>
+   </property>
+  </action>
+  <action name="actionChange_Map">
+   <property name="text">
+    <string>Change Map</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
